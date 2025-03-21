@@ -25,8 +25,8 @@ public class Main extends PApplet{
 
     @Override
     public void settings() {
-        size(1000,644);
-        img = loadImage("Power_Play_Field_Only.jpg");
+        size(1000,545);
+        img = loadImage("Mining_Mayhem_Field.png");
     }
 
     @Override
@@ -38,38 +38,25 @@ public class Main extends PApplet{
     @Override
     public void draw() {
         background(255,255,255);
-        image(img, 0, 0);
+        image(img, 0, 66);
 
         //Draw the point buttons
-        fill(255, 255, 255);
+        fill(134, 31, 65, 200);
         stroke(0, 0, 0);
-        rect(700,150,100,50);
-        rect(700,250,100,50);
+        rect(700,150,100,50,10);
+
+        fill(229, 117, 31, 200);
+        rect(700,250,100,50, 10);
 
         //Add the initial point buttons
-        stroke(0, 0, 240);
-        fill(0, 0, 200,100);
-        rect(700, 590, 100, 30,10);
-
-        stroke(240, 0, 0);
-        fill(200, 0, 0,100);
-        rect(810, 590, 100, 30,10);
-
-        stroke(0, 0, 240);
-        fill(0, 0, 200,100);
-        rect(700, 550, 100, 30,10);
-
-        stroke(240, 0, 0);
-        fill(200, 0, 0,100);
-        rect(810, 550, 100, 30,10);
+        fill(134, 31, 65, 200);
+        rect(700, 400, 100, 30,10);
 
         // Label the buttons
         fill(0,0,0);
-        text("Add Point",700,150);
-        text("Blue Top", 718,570);
-        text("Blue Bottom", 706,610);
-        text("Red Top", 830,570);
-        text("Red Bottom", 817,610);
+        text("Add Point",715,180);
+        text("Remove\n   Point",720,272);
+        text("Initial Point", 712,422);
 
         if((int)(Math.random() + 1) == 1) {
             stroke(255,119,0);
@@ -78,10 +65,6 @@ public class Main extends PApplet{
             stroke(0,60,255);
             fill(0,60,255,100);
         }
-
-//        for (int i = 0; i < points.size(); i++) {
-//            points.get(i).drawPoint(this);
-//        }
 
         path.drawPath(this);
         path.displayPoints(this, points);
@@ -108,22 +91,10 @@ public class Main extends PApplet{
             }
         }
 
-        if(overButton(700, 550, 100, 30)) {
+        if(overButton(700, 400, 100, 30)) {
             if(points.size() >= 1) {
                 points.set(0, new Point(74, 171));
             } else points.add(new Point(74,171));
-        } else if(overButton(700, 590, 100, 30)) {
-            if (points.size() >= 1) {
-                points.set(0, new Point(74, 461));
-            } else points.add(new Point(74, 461));
-        } else if(overButton(810, 550, 100, 30)) {
-            if (points.size() >= 1) {
-                points.set(0, new Point(572, 171));
-            } else points.add(new Point(572, 171));
-        } else if(overButton(810, 590, 100, 30)) {
-            if (points.size() >= 1) {
-                points.set(0, new Point(572, 461));
-            } else points.add(new Point(572, 461));
         }
     }
 

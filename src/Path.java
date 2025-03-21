@@ -114,15 +114,15 @@ public class Path {
             pApplet.fill(0,0,0);
 //            text("P" + (i + 1) + points.get(i).getX() + ", " + points.get(i).getY(), 800, (i*20) + 35);
 
-            pApplet.text("P" + (i + 1) + getFieldCoords(points.get(i)), 800, (i*20) + 35);
+            pApplet.text("P" + (i + 1) + getFieldCoords(points.get(i)), 850, (i*20) + 35);
         }
     }
 
     String getFieldCoords(Point p) {
-        double pixelsToCM = 0.635;
-        if (p.getY() >= 28 && p.getY() <= 603 && p.getX() >= 33 && p.getX() <= 608) {
-            int x = (int)-((p.getX() - 608) * pixelsToCM);
-            int y = (int)-((p.getY() - 603) * pixelsToCM);
+        double pixelsToCM = 0.39456;
+        if (p.getY() >= 130 && p.getY() <= 419 && p.getX() >= 13 && p.getX() <= 610) {
+            int x = (int)((p.getX() - 13) * pixelsToCM);
+            int y = (int)-((p.getY() - 419) * pixelsToCM);
 
             return ("(" + x + ", " + y + ")");
         } else return "Invalid Location";
